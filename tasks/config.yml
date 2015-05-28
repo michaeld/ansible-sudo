@@ -3,11 +3,12 @@
 - name: Adding users
   template: >
     src=etc-sudoers-d-ansible.j2
-    dest=/etc/sudoers.d/ansible
+    dest=/etc/sudoers.d/{{item.name | replace('%', '') }}
     validate='visudo -cf %s'
     owner=root
     group=root
     mode=0440
+  with_items: sudo_users
   tags:
     - system
     - sudo
