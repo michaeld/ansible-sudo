@@ -17,3 +17,6 @@
 
 # list of username or %groupname
 sudo_users: []
+
+# will create one file per entry under /etc/sudoers.d
+file_per_sudoer: yes
