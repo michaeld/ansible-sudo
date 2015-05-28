@@ -48,6 +48,12 @@ Here is a list of all the default variables for this role, which are also availa
 
 # list of username or %groupname
 sudo_users: []
+
+# all sudoers are written to sudoers.d/ansible
+# file_per_sudoer: no
+
+# creates one file per sudoer - sudoers.d/{{sudoer}}
+# file_per_sudoer: yes
 ```
 
 ## Example playbook
@@ -69,6 +75,7 @@ sudo_users: []
       - name: '%foo'
         nopasswd: yes
         commands: '/bin/nano /etc/hosts'
+    file_per_sudoer: no
 ```
 
 ## Testing
