@@ -19,4 +19,4 @@
 sudo_users: []
 
 # will create one file per entry under /etc/sudoers.d
-file_per_sudoer: yes
+file_per_sudoer: no
